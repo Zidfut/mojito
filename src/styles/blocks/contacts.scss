@@ -6,9 +6,12 @@
     padding-bottom: fluid(270, 100);
     overflow: hidden;
 
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 0;
+    }
+
     &__title {
         color: #fff;
-        // font-size: 58px;
         @include fluid-text(58, 32);
         line-height: normal;
         text-transform: uppercase;
@@ -23,7 +26,7 @@
 
         @include media-breakpoint-down(sm) {
             flex-direction: column;
-            position: relative;
+            row-gap: 30px;
         }
     }
 
@@ -50,30 +53,32 @@
         }
 
         @include media-breakpoint-down(sm) {
-            position: static;
-            width: 0;
+            width: 100%;
         }
     }
 
     &__cans {
         display: block;
-        // width: 100%;
         width: fluid(572, 460);
         position: absolute;
         top: 0;
         left: 0;
 
         @include media-breakpoint-down(sm) {
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            max-height: 200px;
+            margin: 0 auto;
         }
     }
 
     &__form {
         background-color: #fff;
         border-radius: 20px;
-        // padding: 40px 30px;
         padding-block: fluid(40, 30);
         padding-inline: fluid(30, 20);
         display: flex;
@@ -87,7 +92,6 @@
     }
 
     &__form-title {
-        // font-size: 38px;
         @include fluid-text(38, 28);
         font-weight: 400;
         text-transform: uppercase;
@@ -102,19 +106,18 @@
         align-items: flex-start;
         row-gap: fluid(15, 10);
 
-        input[type='text'] {
+        input[type='text'],
+        input[type='tel'] {
             display: block;
             width: 100%;
             height: fluid(53, 43);
             border: 1px solid #000;
             border-radius: 53px;
             padding: 0 20px;
-            // font-size: 18px;
             @include fluid-text(18, 16);
             font-weight: 400;
 
             &::placeholder {
-                // font-size: 18px;
                 @include fluid-text(18, 16);
                 font-weight: 400;
                 color: rgba($color: #000000, $alpha: 0.6);
@@ -144,5 +147,10 @@
         row-gap: fluid(15, );
     }
 
+}
 
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
 }

@@ -33,6 +33,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
+			row-gap: 5px;
 			
 			>a {
 				display: inline-block;
@@ -122,6 +123,14 @@
 				margin-bottom: 0;
 			}
 		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	a {
+		text-decoration: none;
 	}
 }
 

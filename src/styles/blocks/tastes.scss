@@ -9,7 +9,7 @@
 
     &__content {
         padding-top: fluid(140, 70);
-        padding-bottom: fluid(200, 150);
+        // padding-bottom: fluid(200, 150);
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -52,7 +52,7 @@
 
     .cans {
         width: fluid(813, 780);
-        bottom: 0;
+        bottom: -30px;
         left: 50%;
         transform: translateX(-50%);
 
@@ -64,6 +64,14 @@
             min-width: 400px;
             transform: none;
         }
+
+    }
+    
+
+    .cans-img {
+        display: block;
+        width: auto;
+        max-width: 100%;
     }
 
     .bl {
