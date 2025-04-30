@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map.get($breakpoints, $name); @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $max: map.get($breakpoints, $name); @return if($max and $max > 0, $max - .02, null);
+}
+
+@function fluid($max: 100, $min: 10) {
+  $maxViewportWidth: 1195;
+  $minViewportWidth: 390;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Do not use units of measurement when working with the rem() function! Pass only numbers as arguments.'
+  }
+}

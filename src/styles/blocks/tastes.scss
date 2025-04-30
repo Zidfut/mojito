@@ -1,0 +1,87 @@
+@use '../helpers' as *;
+
+.tastes {
+    background: var(--gradient-orange);
+
+    &__container {
+        height: 100%;
+    }
+
+    &__content {
+        padding-top: fluid(140, 70);
+        padding-bottom: fluid(200, 150);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 0;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 100%;
+            &:first-child{
+                max-width: 996px;
+            }
+            &:last-child{
+                max-width: 836px;
+            }
+        }
+    }
+
+    &__button {
+        position: relative;
+        z-index: 5;
+
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20%;
+        }
+    }
+
+    .cans {
+        width: fluid(813, 780);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include media-breakpoint-down(sm) {
+            inset: 0;
+            position: relative;
+            display: block;
+            width: 100%;
+            min-width: 400px;
+            transform: none;
+        }
+    }
+
+    .bl {
+        bottom: -1%;
+        left: fluid(20, -120);
+        width: fluid(335, 200);
+    }
+
+    .br {
+        bottom: -1%;
+        right: fluid(160, -50);
+        width: fluid(208, 140);
+    }
+
+    .tl {
+        top: -10px;
+        left: fluid(-10, -80);
+        width: fluid(270, 150);
+    }
+
+}

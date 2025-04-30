@@ -1,0 +1,15 @@
+@use 'helpers' as *;
+
+:root {
+    --font-family-base: 'Onest', sans-serif;
+    --container-width: #{rem(1195)};
+    --container-padding-x: #{rem(16)};
+    
+    --dark1: #0B0B0B;
+    --dark2: #1C1C1C;
+
+    --gradient-green: linear-gradient(180deg, #bde91e 0%, #8ee91e 100%);
+    --gradient-orange: linear-gradient(180deg, #ffd062 0%, #f48f24 100%);
+    --gradient-pink: linear-gradient(180deg, #eb5870 0%, #db292b 100%);
+
+}

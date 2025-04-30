@@ -1,0 +1,141 @@
+@use '../helpers' as *;
+
+.hero {
+    background: var(--gradient-green);
+    
+    @include media-breakpoint-down(sm) {
+        padding-top: 140px;
+    }
+
+    &__container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        width: 56%;
+        position: relative;
+
+        @include media-breakpoint-down(xl) {
+            z-index: 5;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__right {
+        width: 44%;
+        height: 100%;
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        img {
+            &:first-child{
+                width: fluid(540, 200);
+            }
+            &:last-child{
+                width: fluid(640, 300);
+            }
+        }
+    }
+    
+    .tl1 {
+        top: -15px;
+        left: -15px;
+        width: fluid(270, 140);
+    }
+    .tl2 {
+        top: fluid(90, 40);
+        left: -15px;
+        width: fluid(200, 100);
+    }
+    .bc1 {
+        bottom: -15px;
+        left: fluid(200, 0);
+        width: fluid(500, 300);
+    }
+    .lime1 {
+        bottom: -15px;
+        left: 55%;
+        width: fluid(500, 220);
+    }
+    .lime2 {
+        top: 30%;
+        right: -30px;
+        z-index: 0;
+        width: fluid(255, 155);
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+    }
+    .can {
+        bottom: -15px;
+        left: fluid(60, -40);
+        z-index: 1;
+        width: fluid(616, 516);
+        transform-origin: bottom left;
+
+        @include media-breakpoint-down(sm) {
+            position: relative;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            max-height: 350px;
+            max-width: 450px;
+            min-width: 400px;
+            margin: 0 auto;
+        }
+
+        // &.aos-init {
+        //     transform: rotate(20deg);
+            
+        //     @include media-breakpoint-down(sm) {
+        //         left: -60vw;  
+        //     }
+        // }
+
+        // &.aos-animate {
+        //     transform: rotate(0);
+        // }
+
+        // @include media-breakpoint-down(sm) {
+        //     transform: rotate(20deg);
+        //     left: -60vw;
+        // }
+    }
+    .ice {
+        bottom: 0;
+        left: fluid(-70, -120);
+        z-index: 1;
+        width: fluid(920, 720);
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            min-width: 400px;
+            left: 0;
+        }
+    }
+    .tr1 {
+        top: -30px;
+        right: -15px;
+        width: fluid(320, 160);
+    }
+    
+}

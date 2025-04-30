@@ -1,0 +1,195 @@
+@use '../helpers' as *;
+
+.footer {
+	background-color: #1C1C1C;
+	padding: 50px 0 80px;
+	color: #fff;
+	font-size: 18px;
+
+	&__top {
+		display: flex;
+		gap: 30px;
+		align-items: start;
+
+		&-left {
+			flex: 0 1 60%;
+			display: flex;
+			row-gap: 30px;
+			column-gap: fluid(110, 50);
+			align-items: center;
+		}
+
+		&-logo {
+			width: fluid(92, 70);
+			line-height: 0;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		&-phone {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			
+			>a {
+				display: inline-block;
+				font-size: 18px;
+				line-height: 1.2;
+				color: var(--white-color);
+
+				&:hover,
+				&:active {
+					color: var(--accent-color);
+				}
+			}
+		}
+
+		&-right {
+			flex: 0 1 40%;
+		}
+
+		&-socials {
+			display: flex;
+			gap: 15px;
+			align-items: center;
+			justify-content: end;
+
+			>li {
+				line-height: 0;
+				width: 60px;
+				height: 60px;
+
+				a {
+					display: inline-block;
+					transition: all 0.3s ease;
+					transform: translateY(0);
+					opacity: 1;
+					cursor: pointer;
+
+					&:hover,
+					&:active {
+						transform: translateY(-4px);
+						opacity: 0.85;
+					}
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		margin-top: 30px;
+		display: flex;
+		gap: 30px;
+
+		&-left {
+			flex: 0 1 60%;
+		}
+
+		&-info {
+			line-height: 1.2;
+
+			p:not(:last-child) {
+				margin-bottom: 5px;
+			}
+
+			a {
+				display: inline-block;
+				color: var(--white-color);
+
+				&:hover,
+				&:active {
+					color: var(--accent-color);
+				}
+			}
+		}
+
+		&-right {
+			flex: 0 1 40%;
+			display: flex;
+			align-items: end;
+			justify-content: end;
+		}
+
+		&-dev {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.dev-link {
+	display: inline-block;
+	line-height: 0;
+	max-width: 90px;
+	transition: all 0.3s ease;
+	opacity: 1;
+	cursor: pointer;
+
+	&:hover,
+	&:active {
+		opacity: 0.85;
+	}
+}
+
+@media only screen and (max-width: 991.98px) {
+	.footer {
+		padding-bottom: 60px;
+	}
+}
+
+@media only screen and (max-width: 767.98px) {
+	.footer {
+		&__top,
+		&__bottom {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		&__top-left,
+		&__top-right,
+		&__bottom-left,
+		&__bottom-right {
+			flex: 0 1 100%;
+			width: 100%;
+		}
+
+		&__bottom-right {
+			align-items: start;
+			justify-content: start;
+		}
+
+		&__top-socials {
+			justify-content: start;
+		}
+
+		&__bottom-info {
+			font-size: 16px;
+		}
+
+		&__bottom-dev {
+			width: 100%;
+			margin-top: 10px;
+			font-size: 16px;
+		}
+
+		&__top-logo {
+			max-width: 120px;
+		}
+	}
+}
+
+@media only screen and (max-width: 575.98px) {
+	.footer {
+		&__top-left {
+			gap: 20px;
+		}
+	}
+}

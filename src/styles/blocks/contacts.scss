@@ -1,0 +1,148 @@
+@use '../helpers' as *;
+
+.contacts {
+    background: var(--gradient-green);
+    padding-top: fluid(120, 60);
+    padding-bottom: fluid(270, 100);
+    overflow: hidden;
+
+    &__title {
+        color: #fff;
+        // font-size: 58px;
+        @include fluid-text(58, 32);
+        line-height: normal;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: fluid(36, 30);
+        text-wrap-style: balance;
+    }
+
+    &__content {
+        display: flex;
+        column-gap: fluid(52, 12);
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            position: relative;
+        }
+    }
+
+    &__left,
+    &__right {
+        width: 50%;
+    }
+
+    &__left {
+        @include media-breakpoint-down(md) {
+            width: 70%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        position: relative;
+
+        @include media-breakpoint-down(md) {
+            width: 30%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            position: static;
+            width: 0;
+        }
+    }
+
+    &__cans {
+        display: block;
+        // width: 100%;
+        width: fluid(572, 460);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include media-breakpoint-down(sm) {
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__form {
+        background-color: #fff;
+        border-radius: 20px;
+        // padding: 40px 30px;
+        padding-block: fluid(40, 30);
+        padding-inline: fluid(30, 20);
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(30, 20);
+
+        @include media-breakpoint-down(sm) {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &__form-title {
+        // font-size: 38px;
+        @include fluid-text(38, 28);
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 458px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: fluid(15, 10);
+
+        input[type='text'] {
+            display: block;
+            width: 100%;
+            height: fluid(53, 43);
+            border: 1px solid #000;
+            border-radius: 53px;
+            padding: 0 20px;
+            // font-size: 18px;
+            @include fluid-text(18, 16);
+            font-weight: 400;
+
+            &::placeholder {
+                // font-size: 18px;
+                @include fluid-text(18, 16);
+                font-weight: 400;
+                color: rgba($color: #000000, $alpha: 0.6);
+            }
+        }
+
+        .button[type='submit'] {
+            background: var(--gradient-green);
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            padding: fluid(20, 15);
+            color: #000;
+        }
+    }
+
+    &__form-text {
+        width: 100%;
+        max-width: 458px;
+        font-size: 10px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: fluid(15, );
+    }
+
+
+}

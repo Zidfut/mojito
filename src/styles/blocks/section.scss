@@ -1,0 +1,58 @@
+@use '../helpers' as *;
+
+.section {
+    height: 100vh;
+    // height: fluid(1080, 800);
+    min-height: rem(980);
+    max-height: rem(1024);
+    position: relative;
+    overflow: hidden;
+
+    @include media-breakpoint-down(lg) {
+      min-height: 900px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        // min-height: rem(850);
+        // max-height: rem(900);
+        height: auto;
+        min-height: auto;
+        max-height: initial;
+    }
+
+    &__title {
+        margin-bottom: fluid(40, 20);
+        display: grid;
+        row-gap: fluid(20, 10);
+
+        img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+        }
+    }
+
+    &__subtitle {
+        color: #fff;
+        font-weight: 600;
+        @include fluid-text(34, 20);
+        text-wrap-style: balance;
+    }
+    
+    &__text {
+        color: #fff;
+        font-weight: 400;
+        @include fluid-text(24, 18);
+        text-wrap-style: balance;
+    }
+
+    .button {
+        margin-top: fluid(25, 15);
+    }
+
+    &__decor-item {
+        display: block;
+        position: absolute;
+        pointer-events: none;
+    }
+}

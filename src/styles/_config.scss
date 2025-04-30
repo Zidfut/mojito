@@ -1,0 +1,68 @@
+@use 'helpers' as *;
+@use 'variables' as *;
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: 1.2;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+ul[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: rgba(#fff, .8);
+  color: #000;
+}
+
+button, input, select, textarea {
+  line-height: inherit;
+  outline: none;
+}
+
+input, textarea {
+  &:focus:required:invalid {
+    border-color: red;
+  }
+  &:required:valid {
+    border-color: green;
+  }
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}

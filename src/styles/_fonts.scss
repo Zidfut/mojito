@@ -1,0 +1,6 @@
+@use 'helpers' as *;
+
+@include font('Onest', normal, 400, '../assets/fonts/Onest-Regular.woff2');
+@include font('Onest', normal, 600, '../assets/fonts/Onest-SemiBold.woff2');
+@include font('Onest', normal, 700, '../assets/fonts/Onest-Bold.woff2');
+

@@ -1,0 +1,59 @@
+@use 'functions' as *;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: fluid($max, $min);
+}
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else  {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min { @media (min-width: $min) { @content; } } @else { @content; }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max { @media (max-width: $max) { @content; } } @else { @content; }
+}
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: url($furl) format('woff2');
+  }
+}

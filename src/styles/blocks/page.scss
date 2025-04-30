@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+.page {
+    padding-top: fluid(130, 120);
+    padding-bottom: fluid(80, 40);
+    font-size: 18px;
+    color: #1c1c1c;
+
+    p + p {
+        margin-top: rem(10);
+    }
+
+    &__error {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__error-content {
+        height: 100%;
+        padding-block: fluid(40, 20);
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        row-gap: fluid(30, 20);
+        text-align: center;
+
+        .button {
+            background: var(--gradient-green);
+        }
+    }
+
+    &__error-code {
+        color: #8EE91E;
+        text-transform: uppercase;
+        font-weight: 600;
+        @include fluid-text(92, 72);
+    }
+
+    &__error-title {
+        text-transform: uppercase;
+        @include fluid-text(32, 24);
+    }
+}
